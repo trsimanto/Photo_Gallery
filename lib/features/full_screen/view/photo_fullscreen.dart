@@ -2,7 +2,8 @@
 import 'package:flutter/material.dart';
 
 class PhotoFullScreen extends StatelessWidget {
-  const PhotoFullScreen({Key? key}) : super(key: key);
+  String imageUrl;
+  PhotoFullScreen(this.imageUrl,{Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

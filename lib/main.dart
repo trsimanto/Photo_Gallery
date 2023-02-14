@@ -5,6 +5,7 @@ import 'package:photo_gallery/values/theme/default_theme.dart';
 
 import 'config/app_theme.dart';
 import 'config/routes.dart';
+import 'features/full_screen/view/photo_fullscreen.dart';
 import 'features/gallery/view/photo_gallery.dart';
 
 void main() {
@@ -44,6 +45,10 @@ class _PhotoGalleryAppState extends State<PhotoGalleryApp> {
       switch (settings.name) {
         case PhotoGalleryRoutes.photoGallery:
           _nextPage =  const PhotoGallery();
+          break;
+          case PhotoGalleryRoutes.photoFullscreen:
+           final url = settings.arguments["url"];
+          _nextPage = PhotoFullScreen(url);
           break;
         default:
           _nextPage = const PhotoGallery();
