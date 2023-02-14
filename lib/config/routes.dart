@@ -1,3 +1,3 @@
 class PhotoGalleryRoutes {
-  static String demoRoute = "/demoRoute";
+  static const String photoGallery = "/photoGallery";
 }

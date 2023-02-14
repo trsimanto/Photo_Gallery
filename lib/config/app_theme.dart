@@ -13,7 +13,7 @@ class AppColors {
 
   // MAIN
   Color _mainLightColor = Colors.black;
-  Color _mainDarkColor = white;
+  Color _mainDarkColor = Colors.white;
 
   // SECONDARY
   Color _secondLightColor = Color(0xFF232c33);
@@ -25,7 +25,7 @@ class AppColors {
 
   // SCAFFOLD
   Color _scaffoldDarkColor = Color(0xFF000000);
-  Color _scaffoldLightColor = white;
+  Color _scaffoldLightColor = Colors.white;
 
   // TitleColor
   Color _titleLightColor = Color(0xFF545454);
