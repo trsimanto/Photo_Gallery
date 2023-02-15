@@ -1,16 +1,38 @@
-# photo_gallery
+[![Code Video](https://i0.wp.com/www.dafontfree.io/wp-content/uploads/2021/08/Youtube-Logo-Font.jpg?resize=800%2C250&ssl=1)](https://www.youtube.com/watch?v=cg6iKgRp2Oc)
 
-A new Flutter project.
 
-## Getting Started
+# photo gallery
+A photo gallery App using Flickr API, with grid support and a detail page where the people can take a closer look to the photo.
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Technology
+- Programing language : Dart .
+- Framework : Flutter .
+- Architecture : GetX .
+- Network : Dio .
+- Logger : Dio_Logger.
+- JSON Conversion : JSONDecoder .
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Process
+**Step 1 : Project Cloning**
+- Clone this Project .
+- Run the project .
+
+**Step 2 : gallery**
+- Click on any photo from the gallery .
+
+**Step 3 : Deatils Screen**
+- Pinch Zoom .
+
+**Step 4 : get Back**
+- Click on back iocn to go back the gallery from fullscreen.
+
+
+
+### Images
+
+Light             |  Dark | Fullscreen
+:-------------------------:|:-------------------------:|:-------------------------:
+<img src="https://raw.githubusercontent.com/trsimanto/Photo_Gallery/main/s0.jpg" alt="Light" width="200"/>  |  <img src="https://raw.githubusercontent.com/trsimanto/Photo_Gallery/main/s1.jpg" alt="Dark" width="200"/>|<img src="https://raw.githubusercontent.com/trsimanto/Photo_Gallery/main/s2.jpg" alt="Fullscreen" width="200"/>
+
