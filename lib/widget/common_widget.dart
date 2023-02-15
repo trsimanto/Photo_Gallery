@@ -10,7 +10,7 @@ pgImage(String imageUrl, {bool isClickable = true}) {
   return
     isClickable?
     CachedNetworkImage(
-      imageUrl: imageUrl,
+      imageUrl: imageUrl+"_b.jpg",
       imageBuilder: (context, imageProvider) =>
           InkWell(
             onTap: () {
@@ -37,7 +37,7 @@ pgImage(String imageUrl, {bool isClickable = true}) {
     resetDuration: const Duration(milliseconds: 100),
     maxScale: 2.5,
     child:  CachedNetworkImage(
-    imageUrl: imageUrl,
+    imageUrl: imageUrl+"_b.jpg",
     imageBuilder: (context, imageProvider) =>
         Container(
           decoration: BoxDecoration(

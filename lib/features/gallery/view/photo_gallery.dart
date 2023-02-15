@@ -40,7 +40,7 @@ class _PhotoGalleryState extends State<PhotoGallery> {
                   mainAxisSpacing: 1),
               itemCount: _photoList.length,
               itemBuilder: (BuildContext ctx, index) {
-                return pgImage("https://farm${_photoList[index].farm}.staticflickr.com/${_photoList[index].server}/${_photoList[index].id}_${_photoList[index].secret}_m.jpg");
+                return pgImage("https://farm${_photoList[index].farm}.staticflickr.com/${_photoList[index].server}/${_photoList[index].id}_${_photoList[index].secret}");
               }),
         ),
     );
