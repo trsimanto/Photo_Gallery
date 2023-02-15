@@ -6,7 +6,7 @@ import 'package:pinch_zoom/pinch_zoom.dart';
 
 import '../config/routes.dart';
 
-PGImage(String imageUrl, {bool isClickable = true}) {
+pgImage(String imageUrl, {bool isClickable = true}) {
   return
     isClickable?
     CachedNetworkImage(
