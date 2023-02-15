@@ -17,6 +17,7 @@ pgImage(String imageUrl, {bool isClickable = true}) {
               Navigator.pushNamed(
                 context,
                 PhotoGalleryRoutes.photoFullscreen,
+                arguments: {"url":imageUrl}
               );
             },
             child: Container(
