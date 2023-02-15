@@ -1,4 +1,3 @@
-
 class PhotoModel {
   Photos? photos;
   String? stat;
@@ -6,17 +5,16 @@ class PhotoModel {
   PhotoModel({this.photos, this.stat});
 
   PhotoModel.fromJson(Map<String, dynamic> json) {
-    photos =
-    json['photos'] != null ? new Photos.fromJson(json['photos']) : null;
+    photos = json['photos'] != null ? Photos.fromJson(json['photos']) : null;
     stat = json['stat'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.photos != null) {
-      data['photos'] = this.photos!.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (photos != null) {
+      data['photos'] = photos!.toJson();
     }
-    data['stat'] = this.stat;
+    data['stat'] = stat;
     return data;
   }
 }
@@ -38,19 +36,19 @@ class Photos {
     if (json['photo'] != null) {
       photo = <Photo>[];
       json['photo'].forEach((v) {
-        photo!.add(new Photo.fromJson(v));
+        photo!.add(Photo.fromJson(v));
       });
     }
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['page'] = this.page;
-    data['pages'] = this.pages;
-    data['perpage'] = this.perpage;
-    data['total'] = this.total;
-    if (this.photo != null) {
-      data['photo'] = this.photo!.map((v) => v.toJson()).toList();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['page'] = page;
+    data['pages'] = pages;
+    data['perpage'] = perpage;
+    data['total'] = total;
+    if (photo != null) {
+      data['photo'] = photo!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -69,14 +67,14 @@ class Photo {
 
   Photo(
       {this.id,
-        this.owner,
-        this.secret,
-        this.server,
-        this.farm,
-        this.title,
-        this.ispublic,
-        this.isfriend,
-        this.isfamily});
+      this.owner,
+      this.secret,
+      this.server,
+      this.farm,
+      this.title,
+      this.ispublic,
+      this.isfriend,
+      this.isfamily});
 
   Photo.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -91,16 +89,16 @@ class Photo {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
-    data['owner'] = this.owner;
-    data['secret'] = this.secret;
-    data['server'] = this.server;
-    data['farm'] = this.farm;
-    data['title'] = this.title;
-    data['ispublic'] = this.ispublic;
-    data['isfriend'] = this.isfriend;
-    data['isfamily'] = this.isfamily;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['id'] = id;
+    data['owner'] = owner;
+    data['secret'] = secret;
+    data['server'] = server;
+    data['farm'] = farm;
+    data['title'] = title;
+    data['ispublic'] = ispublic;
+    data['isfriend'] = isfriend;
+    data['isfamily'] = isfamily;
     return data;
   }
 }

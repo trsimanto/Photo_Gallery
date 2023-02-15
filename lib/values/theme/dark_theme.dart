@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import '../../config/app_theme.dart';
 import '../../config/theme_helper.dart';
@@ -23,7 +22,6 @@ TextTheme _defaultTextTheme(AppTheme appTheme) {
       color: appTheme.itemTextColor(brightness: Brightness.dark),
       fontSize: 14,
     ),
-
     headline1: TextStyle(
       color: appTheme.titleColor(brightness: Brightness.dark),
       fontSize: 14,
@@ -33,7 +31,7 @@ TextTheme _defaultTextTheme(AppTheme appTheme) {
       color: appTheme.subTitleColor(brightness: Brightness.dark),
       fontSize: 8,
     ),
-    subtitle1: TextStyle(
+    subtitle1: const TextStyle(
       fontSize: 16.0,
       fontWeight: FontWeight.w500,
       color: Colors.white,
@@ -43,7 +41,7 @@ TextTheme _defaultTextTheme(AppTheme appTheme) {
       fontWeight: FontWeight.w400,
       color: appTheme.secondColor(brightness: Brightness.dark),
     ),
-    button: TextStyle(
+    button: const TextStyle(
       color: Colors.white,
     ),
     headline6: TextStyle(
@@ -83,10 +81,10 @@ ThemeData darkTheme(AppTheme appTheme) => ThemeData(
         brightness: Brightness.dark,
       ),
       primaryTextTheme: _defaultTextTheme(appTheme).copyWith(
-          bodyText2:
-              TextStyle(color: Colors.white70, fontWeight: FontWeight.bold),
-          bodyText1:
-              TextStyle(color: Colors.white70, fontWeight: FontWeight.bold)),
+          bodyText2: const TextStyle(
+              color: Colors.white70, fontWeight: FontWeight.bold),
+          bodyText1: const TextStyle(
+              color: Colors.white70, fontWeight: FontWeight.bold)),
       accentColorBrightness: Brightness.dark,
       accentTextTheme: _defaultTextTheme(appTheme).apply(
         bodyColor: appTheme.accentColor(brightness: Brightness.dark),
@@ -97,7 +95,8 @@ ThemeData darkTheme(AppTheme appTheme) => ThemeData(
           appTheme.scaffoldColor(brightness: Brightness.dark),
       hintColor: appTheme.secondColor(brightness: Brightness.dark),
       appBarTheme: AppBarTheme(
-        textTheme: getAppTextTheme(const TextStyle(), _defaultTextTheme(appTheme)),
+        textTheme:
+            getAppTextTheme(const TextStyle(), _defaultTextTheme(appTheme)),
         color:
             appTheme.scaffoldColor(brightness: Brightness.dark, opacity: 0.5),
         iconTheme: IconThemeData(
@@ -106,9 +105,11 @@ ThemeData darkTheme(AppTheme appTheme) => ThemeData(
         brightness: Brightness.dark,
       ),
       buttonColor: Colors.white,
-      dividerTheme: DividerThemeData(color: Color(0xFFcccccc), thickness: 0.3),
+      dividerTheme:
+          const DividerThemeData(color: Color(0xFFcccccc), thickness: 0.3),
       buttonTheme: ButtonThemeData(
         buttonColor: appTheme.accentColor(),
       ),
-      textTheme: getAppTextTheme(const TextStyle(), _defaultTextTheme(appTheme)),
+      textTheme:
+          getAppTextTheme(const TextStyle(), _defaultTextTheme(appTheme)),
     );

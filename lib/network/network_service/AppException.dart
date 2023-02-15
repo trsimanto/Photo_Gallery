@@ -1,7 +1,6 @@
-
 class AppException implements Exception {
-  final _message;
-  final _prefix;
+  final dynamic _message;
+  final dynamic _prefix;
 
   AppException([this._message, this._prefix]);
 
@@ -26,6 +25,7 @@ class BadRequestException extends AppException {
 
 class NetworkException extends AppException {
   int code;
+
   NetworkException(message, {this.code = 0})
       : super(message, "Invalid Request: ");
 }
@@ -33,10 +33,11 @@ class NetworkException extends AppException {
 class UnauthorisedException extends AppException {
   UnauthorisedException([message]) : super(message, "Unauthorised: ");
 }
-class TokenExpeditedException extends AppException {
-  TokenExpeditedException([message]) : super(message, "TokenExpeditedException: ");
-}
 
+class TokenExpeditedException extends AppException {
+  TokenExpeditedException([message])
+      : super(message, "TokenExpeditedException: ");
+}
 
 class InvalidInputException extends AppException {
   InvalidInputException([String? message]) : super(message, "Invalid Input: ");

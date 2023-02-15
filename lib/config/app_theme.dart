@@ -7,37 +7,35 @@ import 'package:flutter/material.dart';
 |--------------------------------------------------------------------------
 */
 
-
 // Theme colors
 class AppColors {
-
   // MAIN
-  Color _mainLightColor = Colors.black;
-  Color _mainDarkColor = Colors.white;
+  final Color _mainLightColor = Colors.black;
+  final Color _mainDarkColor = Colors.white;
 
   // SECONDARY
-  Color _secondLightColor = Color(0xFF232c33);
-  Color _secondDarkColor = Color(0xFFF1F1F1);
+  final Color _secondLightColor = const Color(0xFF232c33);
+  final Color _secondDarkColor = const Color(0xFFF1F1F1);
 
   // ACCENT
-  Color _accentLightColor = Color(0xFF465f81);
-  Color _accentDarkColor = Color(0xFF4a4a4a);
+  final Color _accentLightColor = const Color(0xFF465f81);
+  final Color _accentDarkColor = const Color(0xFF4a4a4a);
 
   // SCAFFOLD
-  Color _scaffoldDarkColor = Color(0xFF000000);
-  Color _scaffoldLightColor = Colors.white;
+  final Color _scaffoldDarkColor = const Color(0xFF000000);
+  final Color _scaffoldLightColor = Colors.white;
 
   // TitleColor
-  Color _titleLightColor = Color(0xFF545454);
-  Color _titleDarkColor = Color(0xFFFAFAFA);
+  final Color _titleLightColor = const Color(0xFF545454);
+  final Color _titleDarkColor = const Color(0xFFFAFAFA);
 
   //subtitleColor
-  Color _subLightColor = Color(0xffb0b3b6);
-  Color _subDarkColor = Color(0xFFd6d8dc);
+  final Color _subLightColor = const Color(0xffb0b3b6);
+  final Color _subDarkColor = const Color(0xFFd6d8dc);
 
-  //itemTextColor like settings items test color
-  Color _itemTextLightColor = Color(0xFF333333);
-  Color _itemTextDarkColor = Color(0xFFcccccc);
+  //itemTextColor
+  final Color _itemTextLightColor = const Color(0xFF333333);
+  final Color _itemTextDarkColor = const Color(0xFFcccccc);
 }
 
 class AppTheme extends AppColors {

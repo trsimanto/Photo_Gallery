@@ -6,26 +6,18 @@ import '../../server_information/ServerInfo.dart';
 import '../network_service/AppException.dart';
 import 'package:dio/dio.dart';
 
-
 class ApiHelper {
-
   Future<dynamic> get(String path,
       {Map<String, Object>? query, bool firstHit = true}) async {
-    var responseJson;
-
     var params =
-        query != null && query.isNotEmpty ? genarate_query_string(query) : "";
-    var url =
-        (ServerInfo.URL + path + (params.isNotEmpty ? "?$params" : ""));
+        query != null && query.isNotEmpty ? generateQueryString(query) : "";
+    var url = (ServerInfo.URL + path + (params.isNotEmpty ? "?$params" : ""));
     try {
-
       var defaultHeaders = {
         'Content-type': 'application/json',
         'Connection': 'keep-alive',
         'Accept': 'application/json, text/plain, */*'
       };
-
-      var uri = Uri.parse(url);
 
       Dio dio = Dio();
       dio.interceptors.add(PrettyDioLogger());
@@ -37,7 +29,8 @@ class ApiHelper {
                 sendTimeout: 5000,
                 receiveTimeout: 5000));
         //remove extra strings from response
-        String tempResponse = response.toString().replaceFirst("jsonFlickrApi(", "");
+        String tempResponse =
+            response.toString().replaceFirst("jsonFlickrApi(", "");
         tempResponse = tempResponse.substring(0, tempResponse.length - 1);
         return json.decode(tempResponse);
       } on DioError catch (e) {
@@ -46,7 +39,6 @@ class ApiHelper {
             throw BadRequestException(e.response?.data.toString());
           case 401:
             throw UnauthorisedException(e.response?.data.toString());
-            break;
           case 403:
             throw UnauthorisedException(e.response?.data.toString());
           case 422:
@@ -59,17 +51,13 @@ class ApiHelper {
       }
     } catch (e) {
       if (e is SocketException) {
-        throw FetchDataException('No Internet connection ' + e.message);
+        throw FetchDataException('No Internet connection ${e.message}');
       }
     }
-    return responseJson;
   }
 
-
-
-
-  String genarate_query_string(Map params,
-      {String prefix: '&', bool inRecursion: false}) {
+  String generateQueryString(Map params,
+      {String prefix = '&', bool inRecursion = false}) {
     String query = '';
 
     params.forEach((key, value) {
@@ -82,7 +70,7 @@ class ApiHelper {
       } else if (value is List || value is Map) {
         if (value is List) value = value.asMap();
         value.forEach((k, v) {
-          query += genarate_query_string({k: v},
+          query += generateQueryString({k: v},
               prefix: '$prefix$key', inRecursion: true);
         });
       }
@@ -90,8 +78,4 @@ class ApiHelper {
 
     return query;
   }
-
-
 }
-
-

@@ -34,11 +34,13 @@ ThemeData defaultTheme(AppTheme appTheme) => ThemeData(
       ),
       iconTheme: IconThemeData(color: appTheme.mainColor()),
       buttonColor: Colors.white,
-      dividerTheme: DividerThemeData(color: Color(0xFF333333), thickness: 0.3),
+      dividerTheme:
+          const DividerThemeData(color: Color(0xFF333333), thickness: 0.3),
       buttonTheme: ButtonThemeData(
         buttonColor: appTheme.accentColor(),
       ),
-      textTheme: getAppTextTheme(TextStyle(), _defaultTextTheme(appTheme)),
+      textTheme:
+          getAppTextTheme(const TextStyle(), _defaultTextTheme(appTheme)),
     );
 
 TextTheme _defaultTextTheme(AppTheme appTheme) {
@@ -68,12 +70,6 @@ TextTheme _defaultTextTheme(AppTheme appTheme) {
       color: appTheme.titleColor(),
       fontSize: 14,
       fontWeight: FontWeight.bold,
-      /*shadows: [
-        Shadow(
-            blurRadius: 10.0,
-            color: appTheme.titleShadowColor(),
-            offset: Offset(-5.0, 5.0))
-      ]*/
     ),
 
     subtitle2: TextStyle(
@@ -91,7 +87,7 @@ TextTheme _defaultTextTheme(AppTheme appTheme) {
       fontWeight: FontWeight.w400,
       color: appTheme.secondColor(),
     ),
-    button: TextStyle(
+    button: const TextStyle(
       color: Colors.white,
     ),
     headline6: TextStyle(

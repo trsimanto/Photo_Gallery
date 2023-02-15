@@ -17,4 +17,3 @@ TextTheme getAppTextTheme(TextStyle appThemeFont, TextTheme textTheme) {
     overline: appThemeFont.merge(textTheme.overline),
   );
 }
-
