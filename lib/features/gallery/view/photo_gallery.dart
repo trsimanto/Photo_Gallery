@@ -12,12 +12,41 @@ class PhotoGallery extends StatefulWidget {
 
 class _PhotoGalleryState extends State<PhotoGallery> {
   PhotoApiService photoApiService = PhotoApiService();
-  List<Photo> _photoList = [];
-  ScrollController _scrollController = ScrollController();
+  final List<Photo> _photoList = [];
+  final ScrollController _scrollController = ScrollController();
+  int _page = 1;
+  bool isLoading = false ;
   @override
   void initState() {
     super.initState();
-    photoApiService.getAllPhotos(1).then((value) {
+    //infinity scroll
+    _scrollController.addListener(() {
+      var triggerFetchMoreSize =
+          0.5 * _scrollController.position.maxScrollExtent;
+      if (_scrollController.position.pixels >
+          triggerFetchMoreSize) {
+        if(isLoading)
+          return ;
+        isLoading = true ;
+        var tempPage = _page;
+        _page += 1;
+        photoApiService.getAllPhotos(_page).then((value) {
+          if(value.photos!=null){
+            setState(() {
+              _photoList.addAll(value.photos?.photo??[]);
+                isLoading = false ;
+            });
+          }
+        }).catchError((e){
+          setState(() {
+            _page = tempPage;
+            isLoading = false ;
+          });
+        });
+      }
+    });
+    //first page photo call
+    photoApiService.getAllPhotos(_page).then((value) {
       if(value.photos!=null){
         setState(() {
           _photoList.addAll(value.photos?.photo??[]);
