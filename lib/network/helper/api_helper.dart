@@ -36,7 +36,10 @@ class ApiHelper {
                 headers: defaultHeaders,
                 sendTimeout: 5000,
                 receiveTimeout: 5000));
-        return json.decode(response.toString());
+        //remove extra strings from response
+        String tempResponse = response.toString().replaceFirst("jsonFlickrApi(", "");
+        tempResponse = tempResponse.substring(0, tempResponse.length - 1);
+        return json.decode(tempResponse);
       } on DioError catch (e) {
         switch (e.response?.statusCode ?? 404) {
           case 400:
