@@ -59,21 +59,18 @@ class _PhotoGalleryState extends State<PhotoGallery> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        color: Colors.white,
-        child: GridView.builder(
-            controller: _scrollController,
-            gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                maxCrossAxisExtent: 200,
-                childAspectRatio: 1,
-                crossAxisSpacing: 1,
-                mainAxisSpacing: 1),
-            itemCount: _photoList.length,
-            itemBuilder: (BuildContext ctx, index) {
-              return pgImage(
-                  "https://farm${_photoList[index].farm}.staticflickr.com/${_photoList[index].server}/${_photoList[index].id}_${_photoList[index].secret}");
-            }),
-      ),
+      body: GridView.builder(
+          controller: _scrollController,
+          gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+              maxCrossAxisExtent: 200,
+              childAspectRatio: 1,
+              crossAxisSpacing: 1,
+              mainAxisSpacing: 1),
+          itemCount: _photoList.length,
+          itemBuilder: (BuildContext ctx, index) {
+            return pgImage(
+                "https://farm${_photoList[index].farm}.staticflickr.com/${_photoList[index].server}/${_photoList[index].id}_${_photoList[index].secret}");
+          }),
     );
   }
 }
